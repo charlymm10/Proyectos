@@ -1,0 +1,60 @@
+Si ya usas npm y un agrupador de módulos como Webpack o Rollup, puedes ejecutar el siguiente comando para instalar la versión más reciente del SDK (más información):
+
+$ npm install firebase
+
+Luego, inicializa Firebase y comienza a usar los SDK de los productos que quieres utilizar.
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyB4oGSQWtjLsIK_N-bZtjRBYuhJPhAp9gk",
+  authDomain: "puntoventa-e843e.firebaseapp.com",
+  projectId: "puntoventa-e843e",
+  storageBucket: "puntoventa-e843e.appspot.com",
+  messagingSenderId: "164701822212",
+  appId: "1:164701822212:web:cf1f104309ccaa4c14c451",
+  measurementId: "G-GKXLNJE8FT"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+
+
+
+
+Si no usas herramientas de compilación, utiliza esta opción para agregar y usar el SDK de Firebase JS. Utiliza esta opción a fin de comenzar, aunque no se recomienda para las apps en producción. Obtén más información.
+
+Copia y pega estas secuencias de comandos en la parte inferior de la etiqueta <body> antes de usar cualquier servicio de Firebase:
+
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyB4oGSQWtjLsIK_N-bZtjRBYuhJPhAp9gk",
+    authDomain: "puntoventa-e843e.firebaseapp.com",
+    projectId: "puntoventa-e843e",
+    storageBucket: "puntoventa-e843e.appspot.com",
+    messagingSenderId: "164701822212",
+    appId: "1:164701822212:web:cf1f104309ccaa4c14c451",
+    measurementId: "G-GKXLNJE8FT"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
