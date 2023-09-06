@@ -1,1 +1,20 @@
 credencales.txt
+
+agregar todos los achivos
+git add . 
+
+sube con mensaje los archivos
+git commit -m "generamos parametros del servidor, cargarmos morgan, bodyparser, y rutas"
+
+guardar los archivos
+git push
+
+instalar 
+npm i ejs express mongoose body-parser morgan
+
+npm init --yes
+
+npm i nodemon -D
+
+ejecutar 
+npm run dev
