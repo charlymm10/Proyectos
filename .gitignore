@@ -7,7 +7,7 @@ sube con mensaje los archivos
 git commit -m "generamos parametros del servidor, cargarmos morgan, bodyparser, y rutas"
 
 guardar los archivos
-git push
+
 
 instalar 
 npm i ejs express mongoose body-parser morgan
