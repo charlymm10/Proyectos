@@ -9,16 +9,52 @@
 <body>
   <div class="container">
 
+
+    <div class="container">
+        <!-- comienza el formulario -->
+        <div class="col-4">
+            <div class="card">
+                <div class="card.body">
+                    <form action="/add"method="POST">
+                        <div class="formGroup">
+                            <label for="producto" class="form-label">nombre</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="nombre" class="from-control">
+                        </div>
+                        <div class="formGroup">
+                            <label for="producto" class="form-label">empresa</label>
+                            <input type="text" id="empresa" name="empresa" placeholder="empresa" class="from-control">
+                        </div>
+                        <div class="formGroup">
+                            <label for="producto" class="form-label">telefono</label>
+                            <input type="text" id="telefono" name="telefono" placeholder="telefono" class="from-control">
+                        </div>
+                        <div class="formGroup">
+                            <label for="producto" class="form-label">direccion</label>
+                            <input type="text" id="direccion" name="direccion" placeholder="direccion" class="from-control">
+                        </div>
+                        <div class="formGroup">
+                            <label for="producto" class="form-label">correo</label>
+                            <input type="text" id="correo" name="correo" placeholder="correo" class="from-control">
+                        </div>
+                        <button class="btn btn-primary">Registrar</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+
     <div class="col-md-5">
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
                     <th>#</th>
                     <th>nombre</th>
-                    <th>emprea</th>
+                    <th>empresa</th>
                     <th>telefono</th>
                     <th>direccion</th>
                     <th>correo</th>
+                    <th>opciones</th>
 
                 </tr>
             </thead>
@@ -39,8 +75,6 @@
                             </button>
                             
                             <!-- Modal -->
-                          
-                           
                         </td>
                     </tr>
                 <% } %>
