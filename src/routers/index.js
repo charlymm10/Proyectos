@@ -19,12 +19,24 @@ router.post('/add', async (req,res)=>{
     res.redirect('/')
     });
 
-router.get('/del/:id', async (req,res)=>{
-    const{id} = req.params;
-    await Clientes.findByIdAndRemove(id);
-    res.redirect('/')
-    });
-
-
-
-module.exports = router;
+    router.get('/del/:id', async(req,res) => {
+        const {id} = req.params;
+        await Clientes.findByIdAndRemove(id);
+        res.redirect('/')
+    })
+    
+    // router.get('/upd/:id', async(req,res) => {
+    //     const {id} = req.params;
+    //     await Cliente.findByIdAndUpdate(id);
+    //     res.redirect('/')
+    // })
+    
+    router.post('/upd/:id', async(req, res)=>{
+        const{id} = req.params;
+        const{nombre, empresa, telefono, direccion, correo} = req.body;
+        await Clientes.findByIdAndUpdate(id, {nombre, empresa, telefono, direccion, correo});
+        res.redirect('/')
+    })
+    
+    
+    module.exports = router;

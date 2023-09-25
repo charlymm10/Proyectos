@@ -74,40 +74,76 @@
                         <td><%= datos[i].direccion  %></td>
                         <td><%= datos[i].correo  %></td>
                         <td>
-                            <!--<a class="btn btn-primary" href="/del/<%= datos[i].id %>">Eliminar</a>-->
+                             <!--<a class="btn btn-primary" href="/del/<%= datos[i].id %>">Eliminar</a>-->
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal_<%=datos[i]._id%>">
-                                Eliminar
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<%= datos[i]._id %>">
+                                ELIMINAR
+                            </button>
+
+                            
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal<%= datos[i]._id %>">
+                                Editar
                             </button>
                             
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal_<%=datos[i]._id%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Quieres eliminar este registro</h5>
-                                            <button type="button" class="btn-close" data-bs-dimiss="modal" aria-label="close"></button>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                            <a href="/del/<%= datos[i] %>" class="btn btn-primary">Eliminar</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div
+<!-- Modal -->
+<div class="modal fade" id="exampleModal<%= datos[i]._id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Esta seguro que quiere borrar este campo?  </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <a href="/del/<%=datos[i]._id %>" class="btn btn-primary">Confirmar</a>
+        </div>
+    </div>
+    </div>
+</div>
+<!-- Modal de actualizacion-->
+<div class="modal fade" id="editModal<%= datos[i]._id %>" tabindex="-1" aria-labelledby="editModalLabel<%= datos[i]._id %>" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel<%= datos[i]._id %>">Editar</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/upd/<%= datos[i]._id %>" method="post">
+                    <div class="form-group">
+                        <label for="nomnre" class="form-label">nombre</label>
+                        <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" value="<%= datos[i].nombre %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="empresa" class="form-label">empresa</label>
+                        <input type="text" name="empresa" id="empresa" placeholder="empresa" class="form-control" value="<%= datos[i].empresa %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono" class="form-label">telefono</label>
+                        <input type="text" name="telefono" id="telefono" placeholder="Telefono" class="form-control" value="<%= datos[i].telefono %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion" class="form-label">direccion</label>
+                        <input type="text" name="direccion" id="direccion" placeholder="direccion" class="form-control" value="<%= datos[i].direccion %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="correo" class="form-label">correo</label>
+                        <input type="text" name="correo" id="correo" placeholder="correo" class="form-control" value="<%= datos[i].correo %>">
+                    </div>
+                    <button class="btn btn-primary">Actualizar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
                         </td>
                     </tr>
                 <% } %>
             </tbody>
         </table>
     </div>
-</div>
-
- </div>
-
- <script src="https://cdn.jsdelivr.ner/npm/boostrap@5.3.2/dist/js/boostrap.bundle.min.js"
- integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDFL"
- crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
