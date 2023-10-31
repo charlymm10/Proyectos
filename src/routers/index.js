@@ -25,12 +25,6 @@ router.post('/add', async (req,res)=>{
         res.redirect('/')
     })
     
-    // router.get('/upd/:id', async(req,res) => {
-    //     const {id} = req.params;
-    //     await Cliente.findByIdAndUpdate(id);
-    //     res.redirect('/')
-    // })
-    
     router.post('/upd/:id', async(req, res)=>{
         const{id} = req.params;
         const{nombre, empresa, telefono, direccion, correo} = req.body;
